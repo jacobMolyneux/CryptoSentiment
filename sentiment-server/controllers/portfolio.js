@@ -1,3 +1,5 @@
+const user = require('../models/UserSchema')
+
 exports.getPortfolio = function(req, res){
     res.send('Not Implemented: Get the Stocks in the users protolio')
 }
