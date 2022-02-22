@@ -1,6 +1,7 @@
 import { CoinCard } from "../components/coincard"
 import Container from 'react-bootstrap/Container'
 import {useState, useEffect} from 'react';
+import Button from 'react-bootstrap/Button'
 const Homepage = () => {
     let [portfolio, setPortfolio] = useState([
         {
@@ -40,6 +41,7 @@ const Homepage = () => {
             "Sentiment": ".303"
         }
     ])
+    let [addStock, setAddStock] = useState(false)
     const portfolioMap = portfolio.map((coin) => {
         return (
             <CoinCard Name = {coin['Name']} Price = {coin['Price']} Sentiment = {coin['Sentiment']}/>
@@ -47,8 +49,10 @@ const Homepage = () => {
     })
     return (
         <div> Homepage
-            <Container>
+            <h1 className = 'text-white p-3'>Portfolio</h1>
+            <Container className ='d-flex'>
             {portfolioMap}
+            <Button>Add a Stock</Button>
             </Container>
         </div>
     )
